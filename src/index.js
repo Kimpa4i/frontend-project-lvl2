@@ -14,28 +14,44 @@ const arrFileJson2 = Object.keys(fileJson2);
 const newArray = [].concat(arrFileJson1, arrFileJson2);
 
 const sortArray = _.union(_.sortBy(newArray));
-console.log(sortArray);
-console.log(fileJson1);
-console.log(fileJson2);
+// const a = sortArray.map(obj => {
+//     const firstObj = fileJson1[obj];
+//     const secondObj = fileJson2[obj];
+//     if(firstObj === secondObj) {
+//         return `${obj}:${firstObj}`
+//     }
+//     if((_.has(fileJson1,obj)) && (_.has(fileJson2,obj))){
+//         return `+ ${obj}:${firstObj}, - ${obj}:${secondObj}`
+//     }
+//     if((!_.has(fileJson1,obj)) && (_.has(fileJson2,obj))){
+//     return `+ ${obj}:${secondObj}`
+//     }
+//     if((_.has(fileJson1,obj)) && (!_.has(fileJson2,obj))){
+//         return `- ${obj}:${firstObj}`
+//         }
+//   });
 
-const a = sortArray.map(obj => {
-    const firstObj = fileJson1[obj];
-    const secondObj = fileJson2[obj];
-    if(firstObj === secondObj) {
-        return `${obj}:${firstObj}`
-    }
-    if((_.has(fileJson1,obj)) && (_.has(fileJson2,obj))){
-        return `+ ${obj}:${firstObj}, - ${obj}:${secondObj}`
-    }
-    if((!_.has(fileJson1,obj)) && (_.has(fileJson2,obj))){
-    return `+ ${obj}:${secondObj}`
-    }
-    if((_.has(fileJson1,obj)) && (!_.has(fileJson2,obj))){
-        return `- ${obj}:${firstObj}`
+const a = sortArray.reduce((acc,obj) => {
+        const firstObj = fileJson1[obj];
+        const secondObj = fileJson2[obj];
+        if(firstObj === secondObj) {
+            return acc+`    ${obj}: ${firstObj}\n`
         }
-  });
-  console.log(a);
-}
+        if((_.has(fileJson1,obj)) && (_.has(fileJson2,obj))){
+            return acc + `  - ${obj}: ${firstObj}\n  + ${obj}:${secondObj}\n`
+        }
+        if((!_.has(fileJson1,obj)) && (_.has(fileJson2,obj))){
+        return acc + `  + ${obj}: ${secondObj}\n`
+        }
+        if((_.has(fileJson1,obj)) && (!_.has(fileJson2,obj))){
+            return acc +`  - ${obj}: ${firstObj}\n`
+            }
+            return acc;
+      },'');
+      console.log(a);
+      return `{\n${a}}`
+    };
 export default diff;
+
 
   
