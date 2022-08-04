@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-import diff from '/Users/andrew/Desktop/frontend-project-lvl2/src/index.js';
 import { Command } from 'commander';
+// eslint-disable-next-line import/extensions
+import diff from '../src/index.js';
+
 const program = new Command();
 
 program
@@ -10,8 +12,8 @@ program
   .argument('<filepath2>')
   .description('Compares two configuration files and shows a difference.')
   .version('0.8.0')
-  .action((filepath1, filepath2) =>{
-    console.log(diff(filepath1,filepath2));
+  .action((filepath1, filepath2) => {
+    console.log(diff(filepath1, filepath2));
   });
 
 program.parse();
