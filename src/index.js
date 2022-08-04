@@ -14,23 +14,6 @@ const arrFileJson2 = Object.keys(fileJson2);
 const newArray = [].concat(arrFileJson1, arrFileJson2);
 
 const sortArray = _.union(_.sortBy(newArray));
-// const a = sortArray.map(obj => {
-//     const firstObj = fileJson1[obj];
-//     const secondObj = fileJson2[obj];
-//     if(firstObj === secondObj) {
-//         return `${obj}:${firstObj}`
-//     }
-//     if((_.has(fileJson1,obj)) && (_.has(fileJson2,obj))){
-//         return `+ ${obj}:${firstObj}, - ${obj}:${secondObj}`
-//     }
-//     if((!_.has(fileJson1,obj)) && (_.has(fileJson2,obj))){
-//     return `+ ${obj}:${secondObj}`
-//     }
-//     if((_.has(fileJson1,obj)) && (!_.has(fileJson2,obj))){
-//         return `- ${obj}:${firstObj}`
-//         }
-//   });
-
 const a = sortArray.reduce((acc,obj) => {
         const firstObj = fileJson1[obj];
         const secondObj = fileJson2[obj];
