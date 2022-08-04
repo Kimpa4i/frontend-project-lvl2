@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Thu Aug  4 13:19:34 2022
+# Make data base, printed on Thu Aug  4 15:47:03 2022
 
 # Variables
 
@@ -25,10 +25,10 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 @F = $(notdir $@)
 # makefile
- 
 CURDIR := /Users/andrew/Desktop/frontend-project-lvl2
 # makefile
 SHELL = /bin/sh
+ 
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
 # environment
@@ -233,7 +233,6 @@ gendiff:
 install:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 2):
 	npm ci
@@ -252,6 +251,6 @@ install:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Aug  4 13:19:34 2022
+# Finished Make data base on Thu Aug  4 15:47:03 2022
 
  
