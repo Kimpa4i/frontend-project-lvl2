@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Fri Aug  5 15:30:15 2022
+# Make data base, printed on Fri Aug  5 15:33:11 2022
 
 # Variables
 
@@ -24,9 +23,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 @F = $(notdir $@)
 # makefile
 CURDIR := /Users/andrew/Desktop/frontend-project-lvl2
- 
-make: *** No rule to make target `all'.  Stop.
-
 # makefile
 SHELL = /bin/sh
 # environment
@@ -140,6 +136,9 @@ LC_ALL = C
 # automatic
 ^F = $(notdir $^)
 # default
+ 
+make: *** No rule to make target `all'.  Stop.
+
 SUFFIXES := 
 # default
 .INCLUDE_DIRS = /usr/local/include
@@ -158,9 +157,9 @@ VSCODE_PID = 80541
 
 # Directories
 
-# . (device 16777233, inode 6028111): 15 files, no impossibilities.
+# . (device 16777233, inode 6028111): 16 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -259,6 +258,6 @@ install:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Aug  5 15:30:15 2022
+# Finished Make data base on Fri Aug  5 15:33:11 2022
 
  
