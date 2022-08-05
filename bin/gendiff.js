@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-// eslint-disable-next-line import/extensions
 import diff from '../src/index.js';
 
 const program = new Command();
