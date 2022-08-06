@@ -1,5 +1,5 @@
-import diff from "../src/index.js";
-
+// eslint-disable-next-line no-undef
 test('p', () => {
-    expect(2+2).toBe(4);
-  });
+  // eslint-disable-next-line no-undef
+  expect(2 + 2).toBe(4);
+});

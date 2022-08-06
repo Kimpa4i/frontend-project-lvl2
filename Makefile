@@ -1,4 +1,7 @@
-install:
+install: install-deps
+		npx simple-git-hooks
+
+install-deps:
 		npm ci
 
 publish:
@@ -12,6 +15,7 @@ gendiff:
 
 lint:
 		npx eslint .
+		
 test:
 		npm test
 
