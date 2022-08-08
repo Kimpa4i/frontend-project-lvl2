@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import _ from 'lodash';
 
 const diff = (filepath1, filepath2) => {
-  const file1 = (readFileSync(path.resolve(filepath1), 'utf8'));
+  const file1 = (readFileSync(path.resolve(process.cwd(), filepath1), 'utf8'));
   // const file1 = (readFileSync(path.resolve((process.cwd(),filepath1).trim()),'utf8'));
   const file2 = (readFileSync(path.resolve(process.cwd(), filepath2), 'utf8'));
   const fileJson1 = JSON.parse(file1);

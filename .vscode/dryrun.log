@@ -1,9 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/andrew/Desktop/frontend-project-lvl2'
- 
-Makefile:22: warning: overriding commands for target `publish'
-Makefile:5: warning: ignoring old commands for target `publish'
-
 npm ci
+npx simple-git-hooks
 make: Leaving directory `/Users/andrew/Desktop/frontend-project-lvl2'
  
