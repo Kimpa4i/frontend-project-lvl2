@@ -21,7 +21,7 @@ const diff = (filepath1, filepath2) => {
       return `${acc}    ${obj}: ${firstObj}\n`;
     }
     if ((_.has(fileJson1, obj)) && (_.has(fileJson2, obj))) {
-      return `${acc}  - ${obj}: ${firstObj}\n  + ${obj}:${secondObj}\n`;
+      return `${acc}  - ${obj}: ${firstObj}\n  + ${obj}: ${secondObj}\n`;
     }
     if ((!_.has(fileJson1, obj)) && (_.has(fileJson2, obj))) {
       return `${acc}  + ${obj}: ${secondObj}\n`;
