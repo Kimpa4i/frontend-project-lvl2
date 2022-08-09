@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Mon Aug  8 21:59:22 2022
+# Make data base, printed on Tue Aug  9 12:06:51 2022
 
 # Variables
 
@@ -274,6 +274,6 @@ install: install-deps
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Aug  8 21:59:22 2022
+# Finished Make data base on Tue Aug  9 12:06:51 2022
 
  
