@@ -10,13 +10,13 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Thu Aug 11 22:59:43 2022
+# Make data base, printed on Thu Aug 11 23:05:10 2022
 
 # Variables
 
 # automatic
- 
 <D = $(patsubst %/,%,$(dir $<))
+ 
 # automatic
 ?F = $(notdir $?)
 # automatic
@@ -148,8 +148,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
- 
-VSCODE_PID = 4486
+VSCODE_PID = 5045
 # variable set hash-table stats:
 # Load=67/1024=7%, Rehash=0, Collisions=1/91=1%
 
@@ -160,6 +159,7 @@ VSCODE_PID = 4486
 # Directories
 
 # . (device 16777233, inode 6028111): 18 files, no impossibilities.
+ 
 
 # 18 files, no impossibilities in 1 directories.
 
@@ -276,6 +276,6 @@ install: install-deps
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Aug 11 22:59:43 2022
+# Finished Make data base on Thu Aug 11 23:05:10 2022
 
  
