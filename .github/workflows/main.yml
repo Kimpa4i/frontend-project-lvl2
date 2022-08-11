@@ -42,7 +42,7 @@ jobs:
         uses: paambaati/codeclimate-action@v3.0.0
         # Add Code Climate secret key
         env:
-          KIMPA4I_ID: ${{ secrets.KIMPA4I_ID }}
+          KIMPA4I_ID: bbf55c9c69fc7c41e1ef611eb0463cf58732685a1da55c9a7d5810684b1cddda
         with:
           coverageCommand: make test-coverage
           debug: true
