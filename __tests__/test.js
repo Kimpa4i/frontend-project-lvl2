@@ -14,3 +14,6 @@ console.log(expectedValue);
 test('test 1', () => {
   expect(diff(getFixturePath('file1.json'), getFixturePath('file2.json'))).toEqual(expectedValue);
 });
+test('test 1', () => {
+  expect(diff(getFixturePath('file1.yml'), getFixturePath('file2.yml'))).toEqual(expectedValue);
+});
