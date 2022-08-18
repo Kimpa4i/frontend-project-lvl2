@@ -12,8 +12,11 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const expectedValue = '{\n  - follow: false\n    host: hexlet.io\n  - proxy: 123.234.53.22\n  - timeout: 50\n  + timeout: 20\n  + verbose: true\n}';
 console.log(expectedValue);
 test('test 1', () => {
-  expect(diff(getFixturePath('file1.json'), getFixturePath('file2.json'))).toEqual(expectedValue);
+  expect(diff(('file1.json'), getFixturePath('file2.json'))).toEqual(expectedValue);
 });
-test('test 1', () => {
+test('test 2', () => {
   expect(diff(getFixturePath('file1.yml'), getFixturePath('file2.yml'))).toEqual(expectedValue);
+});
+test('test 3', () => {
+  expect(diff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'))).toEqual(expectedValue);
 });

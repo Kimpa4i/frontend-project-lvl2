@@ -1,8 +1,8 @@
 import process from 'node:process';
-import path, { parse } from 'node:path';
+import path from 'node:path';
 import { readFileSync } from 'node:fs';
-import _ from 'lodash';
 import dataCompare from './dataCompare.js';
+import parser from './parsers.js';
 
 const getPath = (file) => path.resolve(process.cwd(), '__fixtures__/', file);
 const readFile = (file) => readFileSync(getPath(file), 'utf8');
@@ -11,12 +11,13 @@ const getFormat = (file) => (path.extname(file)).slice(1);
 const diff = (filepath1, filepath2) => {
   const firstFile = readFile(filepath1);
   const secondFile = readFile(filepath2);
-  const obj1 = parse(firstFile, getFormat(filepath1));
-  const obj2 = parse(secondFile, getFormat(filepath2));
+  const obj1 = parser(firstFile, getFormat(filepath1));
+  const obj2 = parser(secondFile, getFormat(filepath2));
   const result = dataCompare(obj1, obj2);
   return result;
 };
 export default diff;
+
 // const diff = (filepath1, filepath2) => {
 //   const file1 = readFile(filepath1);
 //   const file2 = readFile(filepath2);
@@ -48,5 +49,3 @@ export default diff;
 //   return `{\n${a}}`;
 // };
 // export default diff;
-
-

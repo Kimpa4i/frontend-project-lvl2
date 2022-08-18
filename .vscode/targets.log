@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Mon Aug 15 12:16:19 2022
+
+# Make data base, printed on Wed Aug 17 13:12:02 2022
 
 # Variables
 
@@ -246,6 +249,7 @@ lint:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 #  commands to execute (from `Makefile', line 20):
 	npx eslint .
 	
@@ -271,8 +275,6 @@ install: install-deps
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Aug 15 12:16:19 2022
+# Finished Make data base on Wed Aug 17 13:12:02 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-
