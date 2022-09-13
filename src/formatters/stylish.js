@@ -17,3 +17,4 @@ const iter = (node,depth) => {
   ].join('\n');
 };
 
+const stylish = 
