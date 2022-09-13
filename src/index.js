@@ -8,7 +8,7 @@ const getPath = (file) => path.resolve(process.cwd(), '__fixtures__/', file);
 const readFile = (file) => readFileSync(getPath(file), 'utf8');
 const getFormat = (file) => (path.extname(file)).slice(1);
 
-const diff = (filepath1, filepath2) => {
+const diff = (filepath1, filepath2, format = 'stylish') => {
   const firstFile = readFile(filepath1);
   const secondFile = readFile(filepath2);
   const obj1 = parser(firstFile, getFormat(filepath1));
