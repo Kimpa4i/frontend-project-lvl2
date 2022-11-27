@@ -1,8 +1,8 @@
-import stylish from "./stylish.js";
+import stylish from './stylish.js';
 
 const formatter = (data, format) => {
   switch (format) {
-    case "stylish":
+    case 'stylish':
       return stylish(data);
     default:
       throw new Error(`format ${formatter} is not supported`);

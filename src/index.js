@@ -1,15 +1,15 @@
-import process from "node:process";
-import path from "node:path";
-import { readFileSync } from "node:fs";
-import getTree from "./getTree.js";
-import parser from "./parsers.js";
-import formatter from "./formatters/index.js";
+import process from 'node:process';
+import path from 'node:path';
+import { readFileSync } from 'node:fs';
+import getTree from './getTree.js';
+import parser from './parsers.js';
+import formatter from './formatters/index.js';
 
-const getPath = file => path.resolve(process.cwd(), "__fixtures__/", file); //Путь файла
-const readFile = file => readFileSync(getPath(file), "utf8"); //Чтение файла
-const getFormat = file => path.extname(file).slice(1); //Получить формат
+const getPath = (file) => path.resolve(process.cwd(), '__fixtures__/', file); // Путь файла
+const readFile = (file) => readFileSync(getPath(file), 'utf8'); // Чтение файла
+const getFormat = (file) => path.extname(file).slice(1); // Получить формат
 
-const diff = (filepath1, filepath2, format = "stylish") => {
+const diff = (filepath1, filepath2, format = 'stylish') => {
   const firstFile = readFile(filepath1);
   const secondFile = readFile(filepath2);
   const obj1 = parser(firstFile, getFormat(filepath1));
