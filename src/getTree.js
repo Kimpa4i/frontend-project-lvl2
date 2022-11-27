@@ -2,8 +2,7 @@ import _ from 'lodash';
 
 const getTree = (data1, data2) => {
   const keys = _.sortBy(_.union(Object.keys(data1), Object.keys(data2)));
-  // [ 'common', 'group1', 'group2', 'group3' ]
-  console.log(keys);
+
   const diff = keys.map((key) => {
     if (_.isObject(data1[key]) && _.isObject(data2[key])) {
       return {
