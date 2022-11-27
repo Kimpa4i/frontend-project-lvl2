@@ -1,6 +1,3 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/andrew/Desktop/frontend-project-lvl2'
-npm ci
-npx simple-git-hooks
-make: Leaving directory `/Users/andrew/Desktop/frontend-project-lvl2'
- 
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+

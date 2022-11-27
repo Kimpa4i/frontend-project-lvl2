@@ -1,22 +1,31 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { test, expect } from '@jest/globals';
-import { fileURLToPath } from 'url';
-import path, { dirname } from 'path';
-import diff from '../src/index.js';
+import { fileURLToPath } from "url";
+import { readFileSync } from "fs";
+import path from "path";
+import genDiff from "../src/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
-// const readFile = (filename) => fs.readFile(getFixturePath(filename), 'utf-8');
+const __dirname = path.dirname(__filename);
+const getFixturePath = filename =>
+  path.join(__dirname, "..", "__fixtures__", filename);
+const readFile = filepath =>
+  readFileSync(getFixturePath(filepath), "utf-8").trim();
 
-const expectedValue = '{\n  - follow: false\n    host: hexlet.io\n  - proxy: 123.234.53.22\n  - timeout: 50\n  + timeout: 20\n  + verbose: true\n}';
-console.log(expectedValue);
-test('test 1', () => {
-  expect(diff(('file1.json'), getFixturePath('file2.json'))).toEqual(expectedValue);
-});
-test('test 2', () => {
-  expect(diff(getFixturePath('file1.yml'), getFixturePath('file2.yml'))).toEqual(expectedValue);
-});
-test('test 3', () => {
-  expect(diff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'))).toEqual(expectedValue);
-});
+test.each([["file1.json", "file2.json", "stylish"]])(
+  "genDiff-tests",
+  (file1, file2, format = "stylish") => {
+    const actual = genDiff(
+      getFixturePath(file1),
+      getFixturePath(file2),
+      format
+    );
+    const expected = formatter => {
+      switch (formatter) {
+        case "stylish":
+          return readFile("stylish_true.txt");
+        default:
+          throw new Error(`Unknown type of format: ${formatter}`);
+      }
+    };
+    expect(actual).toBe(expected(format));
+  }
+);

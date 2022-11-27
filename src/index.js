@@ -1,20 +1,27 @@
-import process from 'node:process';
-import path from 'node:path';
-import { readFileSync } from 'node:fs';
-import dataCompare from './dataCompare.js';
-import parser from './parsers.js';
+import process from "node:process";
+import path from "node:path";
+import { readFileSync } from "node:fs";
+import getTree from "./getTree.js";
+import parser from "./parsers.js";
+import formatter from "./formatters/index.js";
 
-const getPath = (file) => path.resolve(process.cwd(), '__fixtures__/', file);
-const readFile = (file) => readFileSync(getPath(file), 'utf8');
-const getFormat = (file) => (path.extname(file)).slice(1);
+const getPath = file => path.resolve(process.cwd(), "__fixtures__/", file); //Путь файла
+const readFile = file => readFileSync(getPath(file), "utf8"); //Чтение файла
+const getFormat = file => path.extname(file).slice(1); //Получить формат
 
-const diff = (filepath1, filepath2, format = 'stylish') => {
+const diff = (filepath1, filepath2, format = "stylish") => {
   const firstFile = readFile(filepath1);
   const secondFile = readFile(filepath2);
   const obj1 = parser(firstFile, getFormat(filepath1));
   const obj2 = parser(secondFile, getFormat(filepath2));
-  const result = dataCompare(obj1, obj2);
-  return result;
+  const tree = getTree(obj1, obj2);
+
+  // console.log(getFormat(filepath1));
+  // console.log(getPath(filepath1));
+  // console.log(typeof readFile(filepath1));
+  // console.log(result);
+
+  return formatter(tree, format);
 };
 export default diff;
 
