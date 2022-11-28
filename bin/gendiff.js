@@ -13,7 +13,7 @@ program
   .description('Compares two configuration files and shows a difference.')
   .version('0.8.0')
   .action((filepath1, filepath2) => {
-    console.log(diff(filepath1, filepath2));
+    console.log(diff(filepath1, filepath2, program.opts().format));
   });
 
 program.parse();
