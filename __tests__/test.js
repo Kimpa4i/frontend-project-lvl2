@@ -9,7 +9,11 @@ const __dirname = path.dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (filepath) => readFileSync(getFixturePath(filepath), 'utf-8').trim();
 
-test.each([['file1.json', 'file2.json', 'stylish']])(
+test.each([['file1.json', 'file2.json', 'stylish'],
+  ['file1.json', 'file2.json', 'json'],
+  ['file1.yml', 'file2.yml', 'json'],
+  ['file1.json', 'file2.json', 'plain'],
+  ['file1.yml', 'file2.yml', 'plain']])(
   'genDiff-tests',
   (file1, file2, format = 'stylish') => {
     const actual = genDiff(getFixturePath(file1), getFixturePath(file2), format);
@@ -17,6 +21,10 @@ test.each([['file1.json', 'file2.json', 'stylish']])(
       switch (formatter) {
         case 'stylish':
           return readFile('stylish_true.txt');
+        case 'plain':
+          return readFile('plain_true.txt');
+        case 'json':
+          return readFile('json_true.txt');
         default:
           throw new Error(`Unknown type of format: ${formatter}`);
       }
